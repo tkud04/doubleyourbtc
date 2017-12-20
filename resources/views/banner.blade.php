@@ -7,11 +7,13 @@
 								       $amount = Session::get("amount");
 								       $wallet = Session::get("wallet");
                                     ?>
+                                     <div class="story-area">
 								    <div class="story-box">
 									 <h3>Request was successful!</h3> 
                                      <p>Your deposit will be marked as <strong>PENDING</strong> until your payment is confirmed</p>
 									 <p>For your payment to be confirmed, send &#x0E3F;{{$amount}} to our Bitcoin wallet: <strong>{{$wallet}}</strong></p>
 									 <p>Once your payment has been confirmed 3 times by the blockchain your deposit will be marked as <strong>ACTIVE</strong> and you will receive &#x0E3F;{{$amount * 2}} automatically in 24 hours!</p>
+                                    </div>
                                     </div>
 						            <br>
 						        @endif

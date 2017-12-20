@@ -67,7 +67,7 @@ class MainController extends Controller {
                      Session::flash("deposit-status", "success");
                      Session::flash("amount", $req['amount']);
                      Session::flash("wallet", $wallet);
-                     return redirect()->intended('/#story_title');                           
+                     return redirect()->intended('/');                           
                  }
                                        
 	}
