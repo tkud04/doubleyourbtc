@@ -4,18 +4,6 @@
 					<div class="row align-items-center">
 						<div class="col-lg-3" id="story_title">
 							<div class="story-title">
-								@if(Session::has("deposit-status") && Session::get("deposit-status") == "success") 
-								    <?php 
-								       $amount = Session::get("amount");
-								       $wallet = Session::get("wallet");
-                                    ?>
-								    <div style="border: 1px dashed #fff;" class="text-white">
-									 Request was successful! Your deposit will be marked as <strong>PENDING</strong> until your payment is confirmed<br>
-									 Send &#x0E3F;{{$amount}} to the following wallet: <strong>{{$wallet}}</strong><br>
-									 Once your payment is confirmed your deposit will be marked as <strong>ACTIVE</strong>
-                                    </div>
-						            <br>
-						        @endif
 								<h3 class="text-white">Enter your receiving Bitcoin wallet address</h3>
 								<span class="text-uppercase text-white">Send Bitcoin amount you want to double: (Min - &#x0e3f;0. 001)</span>
 							</div>
