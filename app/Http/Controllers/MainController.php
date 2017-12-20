@@ -35,7 +35,7 @@ class MainController extends Controller {
     	$latestDeposits = $this->helpers->getLatestDeposits();
         $latestPayouts = $this->helpers->getLatestPayouts();
         
-    	return view('index', compact(['latestDeposits', 'latestPayouts','totalDepositAccounts', 'totalPayoutTransactions']));
+    	return view('index', compact(['latestDeposits', 'latestPayouts','totalDepositAccounts', 'totalPayoutTransactions', 'totalDeposit', 'totalPayout']));
     }
     
     
