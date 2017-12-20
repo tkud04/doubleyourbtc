@@ -2,7 +2,7 @@
 			<section class="story-area" id="story">
 				<div class="container">
 					<div class="row align-items-center">
-						<div class="col-lg-3">
+						<div class="col-lg-3" id="story_title">
 							<div class="story-title">
 								@if(Session::has("deposit-status") && Session::get("deposit-status") == "success") 
 								    <?php 
@@ -31,7 +31,10 @@
 									<input type="text" name="amount" placeholder="Deposit amount" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Deposit amount'" required class="single-input-primary" value="{{old('amount')}}"><br>
 									<input type="text" name="wallet_address" placeholder="Your personal wallet (we will send profits here)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your personal wallet (we will send profits here)'" required class="single-input-primary" value="{{old('wallet_address')}}"><br>
 									<button type="submit" class="genric-btn primary radius">Let's double it!</button>
-								</form>
+								</form><br>
+								<p><strong>Please Note:</strong> All Investment that is below Minimum & More than Maximum will count as donation on DoubleYourBTC System.</p>
+                                <p>DoubleYourBTC is the most guaranteed Bitcoin Doubler, our System only takes 24 hours to double your investment.</p> 
+                                <p>You just need to transfer your desired Bitcoin investment to our Address & wait for 24 hours only. All work is automated once 24 hours is completed;<br> You will get just double Bitcoin on your payout wallet Address. <strong>GUARANTEED</strong>.</p>
 							</div>
 						</div>
 					</div>
