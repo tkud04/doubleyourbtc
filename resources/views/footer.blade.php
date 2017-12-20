@@ -48,7 +48,7 @@
 				<div class="container">
 					<div class="footer-content d-flex justify-content-between align-items-center flex-wrap">
 						<div class="logo">
-							<img src="{{asset('img/newlogo.png')}}" alt="">
+							<img src="{{asset('img/newlogo.png')}}" alt="" width="100" height="30">
 						</div>
 						<div class="copy-right-text">Copyright &copy; 2017  |  All rights reserved to DoubleYourBTC Inc. Built by <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">DoubleYourBTC</a></div>
 						<div class="footer-social">
