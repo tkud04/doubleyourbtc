@@ -111,7 +111,7 @@ class Helper implements HelperContract
           function getLatestPayouts()
           {
           	$ret = [];
-          	$payouts = Payoutd::all();
+          	$payouts = Payouts::all();
           	 if($payouts != null)
               {
               	foreach($payouts as $c){
