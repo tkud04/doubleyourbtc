@@ -47,11 +47,11 @@
 										<?php
                                            $class = ""; $txt = "";
                                            if($d['status'] == "pending"){
-                                           	$class = "label label-warning"; $txt = "PENDING";
+                                           	$class = "badge badge-default"; $txt = "PENDING";
                                            }
                                            
                                            else if($d['status'] == "active"){
-                                           	$class = "label label-primary"; $txt = "ACTIVE";
+                                           	$class = "badge badge-success"; $txt = "ACTIVE";
                                            }
                                         ?>
 										<span class="{{$class}}">{{$txt}}</span>
