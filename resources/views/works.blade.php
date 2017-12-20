@@ -87,6 +87,8 @@
 									<div class="wallet-address">{{$p['wallet']}}</div>
 									<div class="amount">&#x0e3f;{{$p['amount']}}</div>
 								</div>
+								@endforeach
+								@endif 
 							</div>
 						</div>
          </div>
