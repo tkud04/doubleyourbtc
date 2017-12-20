@@ -16,8 +16,8 @@
                      @endif     
 								<form method="post" action="{{url('double')}}">
 									{{ csrf_field() }}          
-									<input type="text" name="amount" placeholder="Deposit amount" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Deposit amount'" required class="single-input-primary" value="{{old('amount')}}"><br>
-									<input type="text" name="wallet_address" placeholder="Your personal wallet (we will send profits here)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your personal wallet (we will send profits here)'" required class="single-input-primary" value="{{old('wallet_address')}}"><br>
+									<input type="text" name="amount" placeholder="How much do you want to invest?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'How much do you want to invest?'" required class="single-input-primary" value="{{old('amount')}}"><br>
+									<input type="text" name="wallet_address" placeholder="Enter your personal wallet address (we will send profits here)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your personal wallet address (we will send profits here)'" required class="single-input-primary" value="{{old('wallet_address')}}"><br>
 									<button type="submit" class="genric-btn primary radius">Let's double it!</button>
 								</form><br>
 								<p><strong>Please Note:</strong> All Investment that is below Minimum & More than Maximum will count as donation on DoubleYourBTC System.</p>

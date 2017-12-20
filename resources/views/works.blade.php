@@ -47,7 +47,7 @@
 										<?php
                                            $class = ""; $txt = "";
                                            if($d['status'] == "pending"){
-                                           	$class = "badge badge-default"; $txt = "PENDING";
+                                           	$class = "badge badge-warning"; $txt = "PENDING";
                                            }
                                            
                                            else if($d['status'] == "active"){
