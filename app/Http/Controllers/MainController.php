@@ -45,7 +45,7 @@ class MainController extends Controller {
           # dd($req);
                
                 $validator = Validator::make($req, [
-                             'amount' => 'required',
+                             'amount' => 'required|numeric',
                              'wallet_address' => 'required'
                    ]);
          
