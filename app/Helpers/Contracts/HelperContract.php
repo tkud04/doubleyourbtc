@@ -8,6 +8,6 @@ Interface HelperContract
         public function addDeposit($data);
         public function addPayout($data);
         public function getLatestDeposits();
-        public function getLatestPayouts($url);
+        public function getLatestPayouts();
 }
  ?>
