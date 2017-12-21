@@ -12,7 +12,7 @@ use Session;
 use Validator; 
 use Carbon\Carbon; 
 
-class MainController extends Controller {
+class AdminController extends Controller {
 
 	protected $helpers; //Helpers implementation
     
