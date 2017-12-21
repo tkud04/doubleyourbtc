@@ -32,8 +32,8 @@ class MainController extends Controller {
         $totalPayout = "104641.54678413";
         $totalPayoutTransactions = "2045137";
         $totalDepositAccounts = "226312";
-    	$latestDeposits = $this->helpers->getLatestDeposits();
-        $latestPayouts = $this->helpers->getLatestPayouts();
+    	$latestDeposits = $this->helpers->getDeposits();
+        $latestPayouts = $this->helpers->getPayouts();
         
     	return view('index', compact(['latestDeposits', 'latestPayouts','totalDepositAccounts', 'totalPayoutTransactions', 'totalDeposit', 'totalPayout']));
     }

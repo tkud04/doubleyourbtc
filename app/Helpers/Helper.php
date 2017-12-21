@@ -78,7 +78,7 @@ class Helper implements HelperContract
            {
            	$payout_id = $this->getTransactionID();
            
-           	$ret = Payouts::create(['payout_id' => $deposit_id, 
+           	$ret = Payouts::create(['payout_id' => $payout_id, 
                                                       'wallet' => $data['wallet'], 
                                                       'amount' => $data['amount']
                                                       ]);
@@ -86,8 +86,8 @@ class Helper implements HelperContract
                 return $ret;
            } 
            
-          
-          function getLatestDeposits()
+           
+           function getDeposits()
           {
           	$ret = [];
           	$deposits = Deposits::all();
@@ -108,7 +108,7 @@ class Helper implements HelperContract
           }
           
           
-          function getLatestPayouts()
+          function getPayouts()
           {
           	$ret = [];
           	$payouts = Payouts::all();
@@ -122,6 +122,34 @@ class Helper implements HelperContract
                   $temp['amount'] = $c->amount;
                   $temp["date"] = $c->created_at->format("D, jS F Y h:i A");
                   array_push($ret, $temp);
+                 } 
+              }
+              return $ret;
+          }
+           
+          
+          function getLatestDeposits()
+          {
+          	$ret = [];
+          	$deposits = $this->getLatestDeposits();
+          	 if($deposits != null && count($deposits) > 0)
+              {
+              	for($i<0 ; $i < 10; $i++){               
+                  array_push($ret, $deposits[$i]);
+                 } 
+              }
+              return $ret;
+          }
+          
+          
+          function getLatestPayouts()
+          {
+          	$ret = [];
+          	$payouts = $this->getLatestPayouts();
+          	 if($payouts != null && count($payouts) > 0)
+              {
+              	for($i<0 ; $i < 10; $i++){               
+                  array_push($ret, $payouts[$i]);
                  } 
               }
               return $ret;

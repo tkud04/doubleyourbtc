@@ -15,11 +15,11 @@ Route::get('/', 'MainController@index');
 Route::post('double', 'MainController@postDouble');
 
 Route::get('admin', 'AdminController@getLogin');
-Route::post('admin', 'AdminController@postLogin');
+Route::post('admin', 'LoginController@postLogin');
 Route::get('admin/dashboard', 'AdminController@getDashboard');
 Route::get('admin/deposits', 'AdminController@getDeposits');
 Route::post('admin/change-deposit-status', 'AdminController@postChangeDepositStatus');
 Route::get('admin/payouts', 'AdminController@getPayouts');
 Route::post('admin/add-payout', 'AdminController@postAddPayout');
 
-Route::get('admin/logout', 'AdminController@getLogout');
+Route::get('logout', 'LoginController@getLogout');
