@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@getIndex');
 Route::post('double', 'MainController@postDouble');
 
 Route::get('admin', 'AdminController@getLogin');

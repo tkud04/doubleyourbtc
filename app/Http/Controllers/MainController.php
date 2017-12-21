@@ -26,7 +26,7 @@ class MainController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
     {
     	$totalDeposit = "12449.1245786542";
         $totalPayout = "104641.54678413";
