@@ -130,11 +130,11 @@ class Helper implements HelperContract
           
           function getLatestDeposits()
           {
-          	$ret = [];
+          	$ret = []; $i = 0;
           	$deposits = $this->getDeposits();
           	 if($deposits != null && count($deposits) > 0)
               {
-              	for($i<0 ; $i < 10; $i++){               
+              	for($i = 0 ; $i < 10; $i++){               
                   array_push($ret, $deposits[$i]);
                  } 
               }
@@ -148,7 +148,7 @@ class Helper implements HelperContract
           	$payouts = $this->getPayouts();
           	 if($payouts != null && count($payouts) > 0)
               {
-              	for($i<0 ; $i < 10; $i++){               
+              	for($i = 0 ; $i < 10; $i++){               
                   array_push($ret, $payouts[$i]);
                  } 
               }
