@@ -134,9 +134,17 @@ class Helper implements HelperContract
           	$deposits = $this->getDeposits();
           	 if($deposits != null && count($deposits) > 0)
               {
-              	for($i = 0 ; $i < 10; $i++){               
-                  array_push($ret, $deposits[$i]);
-                 } 
+              	if(count($deposits) < 10){
+                 	for($i = 0 ; $i < count($deposits); $i++){               
+                       array_push($ret, $deposits[$i]);
+                     } 
+                  } 
+                  
+                  else{
+                 	for($i = 0 ; $i < 10; $i++){               
+                       array_push($ret, $deposits[$i]);
+                     } 
+                  } 
               }
               return $ret;
           }
@@ -148,9 +156,17 @@ class Helper implements HelperContract
           	$payouts = $this->getPayouts();
           	 if($payouts != null && count($payouts) > 0)
               {
-              	for($i = 0 ; $i < 10; $i++){               
-                  array_push($ret, $payouts[$i]);
-                 } 
+              	if(count($payouts) < 10){
+                 	for($i = 0 ; $i < count($payouts); $i++){               
+                       array_push($ret, $payouts[$i]);
+                     } 
+                  } 
+                  
+                  else{
+                 	for($i = 0 ; $i < 10; $i++){               
+                       array_push($ret, $payouts[$i]);
+                     } 
+                  } 
               }
               return $ret;
           }
