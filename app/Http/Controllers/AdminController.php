@@ -111,9 +111,9 @@ class AdminController extends Controller {
                  else
                  { 
                      $arr = ['amount' => $req['amount'], 'wallet' => $req['wallet'], 'status' => "pending"];
-                     $this->helpers->addDeposit($arr);
+                     $this->helpers->addPayout($arr);
 
-                     Session::flash("add-deposit-status", "success");
+                     Session::flash("add-payout-status", "success");
                      return redirect()->intended('admin/dashboard');                           
                  }
                                        
