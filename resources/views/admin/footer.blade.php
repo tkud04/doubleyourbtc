@@ -20,11 +20,7 @@
           <div class="modal-body padtrbl">
 
             <div class="login-box-body">
-              <p class="">Change status for deposit number <span id="dep-num-display"></span></p>
-              <!--------- Input errors -------------->
-                    @if (count($errors) > 0)
-                          @include('input-errors', ["errors" => $errors])
-                     @endif     
+              <p class="">Change status for deposit number <span id="dep-num-display"></span></p>                  
               <div class="form-group">
                 <form name="" method="post" action="{{url('admin/change-deposit-status')}}">
                 	<input type="hidden" id = "token" name="_token" value="{{ csrf_token() }}">
@@ -67,11 +63,7 @@
           <div class="modal-body padtrbl">
 
             <div class="login-box-body">
-              <p class="">Add new profit payout to the system </p>
-              <!--------- Input errors -------------->
-                    @if (count($errors) > 0)
-                          @include('input-errors', ["errors" => $errors])
-                     @endif     
+              <p class="">Add new profit payout to the system </p>             
               <div class="form-group">
                 <form name="" method="post" action="{{url('admin/add-payout')}}">
                 	<input type="hidden" id = "token" name="_token" value="{{ csrf_token() }}">

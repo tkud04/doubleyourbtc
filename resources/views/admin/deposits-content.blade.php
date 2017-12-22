@@ -5,7 +5,11 @@
                                 <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Deposits</h3>
                             </div>
                             <div class="panel-body">
-                            	@if(Session:has("change-status") && Session::get("change-status") == "success")
+                            <!--------- Input errors -------------->
+                              @if (count($errors) > 0)
+                               @include('input-errors', ["errors" => $errors])
+                             @endif 
+                            	@if(Session::has("change-status") && Session::get("change-status") == "success")
                                     <div class="alert alert-success">
                                     	Deposit status updated successfully!
                                     </div>

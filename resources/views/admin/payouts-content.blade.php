@@ -5,7 +5,11 @@
                                 <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Payouts <a class="pull-right" href="#" style="border: 1px dashed #0f0; padding: 3px; font-style: italic;" id="add-payout">Add new payout</a></h3>
                             </div>
                             <div class="panel-body">
-                            	@if(Session:has("add-payout-status") && Session::get("add-payout-status") == "success")
+                            	<!--------- Input errors -------------->
+                              @if (count($errors) > 0)
+                               @include('input-errors', ["errors" => $errors])
+                             @endif 
+                            	@if(Session::has("add-payout-status") && Session::get("add-payout-status") == "success")
                                     <div class="alert alert-success">
                                     	Payout added successfully!
                                     </div>
