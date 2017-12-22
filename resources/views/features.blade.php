@@ -2,6 +2,13 @@
 			<section class="featured-area">
 				<div class="container">
 					<div class="row">
+						<center>
+							<div class="col-md-6">
+								<img class="img img-responsive" src="{{asset('img/dc.png')}}" alt="DoubleYourBTC 24 Hours Instant Payment"><>
+                            </div>
+                        </center>
+					</div>
+					<div class="row">
 						<div class="col-md-4">
 							<div class="single-feature d-flex flex-wrap justify-content-between">
 								<div class="icon d-flex align-items-center justify-content-center">
