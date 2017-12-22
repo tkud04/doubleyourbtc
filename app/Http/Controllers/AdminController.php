@@ -64,7 +64,7 @@ class AdminController extends Controller {
           # dd($req);
                
                 $validator = Validator::make($req, [
-                             'dep-num' => 'required|numeric',
+                             'dep-num' => 'required',
                              'status' => 'required|not_in:none'
                    ]);
          
