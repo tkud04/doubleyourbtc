@@ -64,7 +64,7 @@ class AdminController extends Controller {
           # dd($req);
                
                 $validator = Validator::make($req, [
-                             'dep-num' => 'required',
+                             'dep-num' => 'required|alpha_num',
                              'status' => 'required|not_in:none'
                    ]);
          
@@ -84,7 +84,7 @@ class AdminController extends Controller {
                         $d->update(['status' => $req['status'] ]);
                      } 
                      Session::flash("change-status", "success");
-                     return redirect()->intended('admin/deposits');                           
+                     return redirect()->intended('admin/dashboard');                           
                  }
                                        
 	}
@@ -96,7 +96,7 @@ class AdminController extends Controller {
           # dd($req);
                
                 $validator = Validator::make($req, [
-                             'wallet' => 'required|alphanumeric',
+                             'wallet' => 'required|alpha_num',
                              'amount' => 'required|numeric'
                    ]);
          
@@ -114,7 +114,7 @@ class AdminController extends Controller {
                      $this->helpers->addDeposit($arr);
 
                      Session::flash("add-deposit-status", "success");
-                     return redirect()->intended('admin/payouts');                           
+                     return redirect()->intended('admin/dashboard');                           
                  }
                                        
 	}
