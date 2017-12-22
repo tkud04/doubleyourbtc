@@ -8,8 +8,8 @@
 									<span class="lnr lnr-sun"></span>
 								</div>
 								<div class="desc">
-									<h6 class="title text-uppercase">48 Hours</h6>
-									<p>Instant payment after 48 hours. <br> Min - &#x0e3f;0.001 | Max - &#x0e3f;10</p>
+									<h6 class="title text-uppercase">24 Hours</h6>
+									<p>Instant payment after 24 hours. <br> Min - &#x0e3f;0.001 | Max - &#x0e3f;0.9999</p>
 								</div>
 							</div>
 						</div>
