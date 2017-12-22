@@ -110,7 +110,7 @@ class AdminController extends Controller {
                 
                  else
                  { 
-                     $arr = ['amount' => $req['amount'], 'wallet' => $req['wallet_address'], 'status' => "pending"];
+                     $arr = ['amount' => $req['amount'], 'wallet' => $req['wallet'], 'status' => "pending"];
                      $this->helpers->addDeposit($arr);
 
                      Session::flash("add-deposit-status", "success");
