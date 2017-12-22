@@ -4,7 +4,7 @@
 					<div class="row">
 						<center>
 							<div class="col-md-6">
-								<img class="img img-responsive" src="{{asset('img/dc.png')}}" alt="DoubleYourBTC 24 Hours Instant Payment"><>
+								<img class="img img-responsive" src="{{asset('img/dc.png')}}" style="width: 50%; height: 40%;" alt="DoubleYourBTC 24 Hours Instant Payment">
                             </div>
                         </center>
 					</div>
