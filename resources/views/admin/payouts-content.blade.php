@@ -10,10 +10,16 @@
                                @include('input-errors', ["errors" => $errors])
                              @endif 
                             	@if(Session::has("add-payout-status") && Session::get("add-payout-status") == "success")
-                                    <div class="alert alert-success">
-                                    	Payout added successfully!
-                                    </div>
-                                @endif 
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <div class="alert alert-info alert-dismissable">
+                                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                           <i class="fa fa-info-circle"></i>  <strong>Payout added successfully!</strong>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- /.row -->
+                                @endif        
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>

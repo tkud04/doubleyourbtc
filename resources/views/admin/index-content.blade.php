@@ -1,12 +1,29 @@
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="#" class="alert-link">SB Admin 2</a> for additional features!
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+              <!--------- Input errors -------------->
+                              @if (count($errors) > 0)
+                               @include('input-errors', ["errors" => $errors])
+                             @endif 
+                            	@if(Session::has("change-status") && Session::get("change-status") == "success")
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <div class="alert alert-info alert-dismissable">
+                                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                           <i class="fa fa-info-circle"></i>  <strong>Deposit status updated successfully!</strong>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- /.row -->
+                                @endif          
+                            	@if(Session::has("add-payout-status") && Session::get("add-payout-status") == "success")
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <div class="alert alert-info alert-dismissable">
+                                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                           <i class="fa fa-info-circle"></i>  <strong>Payout added successfully!</strong>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- /.row -->
+                                @endif             
 
                 <div class="row">
                     <div class="col-lg-6 col-md-6">

@@ -10,10 +10,17 @@
                                @include('input-errors', ["errors" => $errors])
                              @endif 
                             	@if(Session::has("change-status") && Session::get("change-status") == "success")
-                                    <div class="alert alert-success">
-                                    	Deposit status updated successfully!
-                                    </div>
-                                @endif                             	
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <div class="alert alert-info alert-dismissable">
+                                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                           <i class="fa fa-info-circle"></i>  <strong>Deposit status updated successfully!</strong>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <!-- /.row -->
+                                @endif        
+                        	
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
