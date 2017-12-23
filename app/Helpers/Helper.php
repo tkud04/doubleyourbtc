@@ -91,7 +91,7 @@ class Helper implements HelperContract
            function getDeposits()
           {
           	$ret = [];
-          	$deposits = Deposits::all();
+          	$deposits = Deposits::orderBy('created_at', 'desc')->get();
           	 if($deposits != null)
               {
               	foreach($deposits as $c){
@@ -112,7 +112,7 @@ class Helper implements HelperContract
           function getPayouts()
           {
           	$ret = [];
-          	$payouts = Payouts::all();
+          	$payouts = Payouts::orderBy('created_at', 'desc')->get();
           	 if($payouts != null)
               {
               	foreach($payouts as $c){
