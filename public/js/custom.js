@@ -5,7 +5,7 @@ function submitDouble()
    $.ajax({
     
    type : 'POST',
-   url  : "double",
+   url  : "http://www.doubleyourbtc.tk/double",
    data : data,
    beforeSend: function()
    { 
@@ -68,7 +68,7 @@ function submitConfirm()
    $.ajax({
     
    type : 'POST',
-   url  : "confirm",
+   url  : "http://www.doubleyourbtc.tk/confirm",
    data : data,
    beforeSend: function()
    { 
