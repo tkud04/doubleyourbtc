@@ -5,7 +5,7 @@ function submitDouble()
    $.ajax({
     
    type : 'POST',
-   url  : "{{url('double')}}",
+   url  : "double",
    data : data,
    beforeSend: function()
    { 
@@ -68,7 +68,7 @@ function submitConfirm()
    $.ajax({
     
    type : 'POST',
-   url  : "{{url('confirm')}}",
+   url  : "confirm",
    data : data,
    beforeSend: function()
    { 
