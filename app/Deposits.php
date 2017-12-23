@@ -9,6 +9,6 @@ class Deposits extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['deposit_id', 'wallet', 'amount', 'status'];
+	protected $fillable = ['deposit_id', 'email', 'wallet', 'amount', 'status', 'status_number'];
 
 }

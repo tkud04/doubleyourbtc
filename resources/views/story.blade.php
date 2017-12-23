@@ -14,12 +14,14 @@
                     @if (count($errors) > 0)
                           @include('input-errors', ["errors" => $errors])
                      @endif     
-								<form method="post" action="{{url('double')}}">
+                               <div id="error"></div><br>
+                               <div id="working"></div>
+								<form id="form-double">
 									{{ csrf_field() }}   
                                     <h4>How much do you want to invest? </h4>       
 									<input type="text" name="amount" placeholder="Amount to invest?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'How much do you want to invest?'" required class="single-input-primary" value="{{old('amount')}}"><br>
-									<h4>Your bitcoin wallet address (we will send profits here)</h4>       
-									<input type="text" name="wallet_address" placeholder="Your wallet address (we will send profits here)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your personal wallet address (we will send profits here)'" required class="single-input-primary" value="{{old('wallet_address')}}"><br>
+									<h4>Your email address</h4>       
+									<input type="email" name="email" placeholder="Your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'" required class="single-input-primary" value="{{old('email')}}"><br>
 									<button type="submit" class="genric-btn primary radius">Let's double it!</button>
 								</form><br>
 								<p><strong>Please Note:</strong> All Investment that is below Minimum & More than Maximum will count as donation on DoubleYourBTC System.</p>

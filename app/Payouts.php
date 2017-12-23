@@ -9,6 +9,6 @@ class Payouts extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['payout_id', 'wallet', 'amount'];
+	protected $fillable = ['payout_id', 'email', 'wallet', 'amount', 'status'];
 
 }

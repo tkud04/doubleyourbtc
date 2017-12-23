@@ -11,5 +11,6 @@
 		<script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
 		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
 		<script src="{{asset('js/main.js')}}"></script>
+		<script src="{{asset('js/custom.js')}}"></script>
 	</body>
 </html>

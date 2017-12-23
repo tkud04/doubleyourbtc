@@ -60,3 +60,60 @@
 				</div>
 			</footer>
 			<!-- End footer Area -->
+				
+			<!--Modal box-->
+    <div class="modal fade" id="userModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+      
+        <!-- Modal content no 1-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center form-title">Confirm Payment</h4>
+          </div>
+          <div class="modal-body padtrbl">
+            
+              
+            <!-- content 2-->
+            <div id="confirm-content">
+               <h5>Request was successful!</h5> 
+                                     <p>Your deposit is marked as <strong>PENDING</strong> until your payment is confirmed</p>
+									 <p>For your payment to be confirmed, send &#x0E3F;<span id="tamount"></span> to our Bitcoin wallet: <br><center><h5>1NnqMhCiss4AChv7WJ9qR4dfJrPY6tUcRE</h5></center></p>
+									 <p>Once your payment has been confirmed 3 times by the blockchain your deposit will be marked as <strong>ACTIVE</strong> you will receive an email from us containing your verification code. Enter the code below to double your bitcoins!</p><br>
+									<p>NOTE: If you have not received your verification code, please be patient. If you truly sent bitcoins to the above address and the transaction is confirmed 3 times, you will get the code.</p>
+              <div class="form-group">
+              	<div id="error"></div><br>
+                               <div id="working"></div>
+                <form id="form-confirm">
+                     {{ csrf_field() }}   
+                	<input type="hidden" id = "confirm-email" name="email" value="">
+                	<input type="hidden" id = "confirm-amount" name="amount" value="">
+                	<input type="hidden" id = "confirm-wallet" name="profit_wallet" value="">
+                 <div class="form-group has-feedback"> <!----- username -------------->
+                      <label>Verification Code*</label>
+                      <input type="text" class="form-control" name="status_number" placeholder="Verification code.."> 
+                  </div>
+                  <div class="row">     
+                      <div class="col-xs-12">
+                          <button type="submit" class="btn btn-green btn-block btn-flat">Submit</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <!-- content 3-->
+            <div id="notif-content">
+              <p class="">Notification</p>                  
+              <div class="jumbotron" id="notif">
+               
+              </div>
+            </div>
+            
+          </div>         
+        </div>
+        <!-- /Modal content no 1-->
+
+      </div>
+    </div>
+    <!--/ Modal box-->

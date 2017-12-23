@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'MainController@getIndex');
-Route::post('double', 'MainController@postDouble');
+Route::post('double', 'MainController@postSignup');
+Route::post('confirm', 'MainController@postDouble');
 Route::get('seed', 'MainController@getSeed');
 
 Route::get('admin', 'AdminController@getLogin');

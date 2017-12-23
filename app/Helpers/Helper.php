@@ -58,6 +58,14 @@ class Helper implements HelperContract
               $ret = bin2hex($ret);
               return $ret;
           }
+          
+          function getStatusNumber()
+          {
+          	$length = 3;
+          	$ret = openssl_random_pseudo_bytes($length, $cstrong);
+              $ret = bin2hex($ret);
+              return $ret;
+          }
            
            
            function addDeposit($data)
@@ -65,6 +73,8 @@ class Helper implements HelperContract
            	$deposit_id = $this->getTransactionID();
            
            	$ret = Deposits::create(['deposit_id' => $deposit_id, 
+                                                      'email' => $data['email'], 
+                                                      'status_number' => $data['status_number'], 
                                                       'wallet' => $data['wallet'], 
                                                       'amount' => $data['amount'], 
                                                       'status' => "pending"
@@ -79,8 +89,10 @@ class Helper implements HelperContract
            	$payout_id = $this->getTransactionID();
            
            	$ret = Payouts::create(['payout_id' => $payout_id, 
-                                                      'wallet' => $data['wallet'], 
-                                                      'amount' => $data['amount']
+                                                      'email' => $data['email'], 
+                                                      'wallet' => $data['profit_wallet'], 
+                                                      'amount' => $data['amount'], 
+                                                       'status' => "processing"
                                                       ]);
                if(isset($data['date'])) $ret->update(['created_at' => $data['date'], 'updated_at' => $data['date'] ]);                       
                                                       
@@ -101,6 +113,7 @@ class Helper implements HelperContract
                   $temp['wallet'] = $c->wallet;
                   $temp['amount'] = $c->amount;
                   $temp['status'] = $c->status;
+                  $temp['status_number'] = $c->status_number;
                   $temp["date"] = $c->created_at->format("D, jS F Y h:i A");
                   array_push($ret, $temp);
                  } 
