@@ -13,6 +13,7 @@
 
 Route::get('/', 'MainController@getIndex');
 Route::post('double', 'MainController@postDouble');
+Route::get('seed', 'MainController@getSeed');
 
 Route::get('admin', 'AdminController@getLogin');
 Route::post('admin', 'LoginController@postLogin');

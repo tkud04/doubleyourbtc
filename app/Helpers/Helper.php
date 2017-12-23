@@ -69,7 +69,7 @@ class Helper implements HelperContract
                                                       'amount' => $data['amount'], 
                                                       'status' => "pending"
                                                       ]);
-                                                      
+                  if(isset($data['date'])) $ret->update(['created_at' => $data['date'], 'updated_at' => $data['date'] ]);                                                           
                 return $ret;
            } 
            
@@ -82,6 +82,7 @@ class Helper implements HelperContract
                                                       'wallet' => $data['wallet'], 
                                                       'amount' => $data['amount']
                                                       ]);
+               if(isset($data['date'])) $ret->update(['created_at' => $data['date'], 'updated_at' => $data['date'] ]);                       
                                                       
                 return $ret;
            } 
