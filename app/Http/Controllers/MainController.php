@@ -75,7 +75,7 @@ class MainController extends Controller {
 	
 	public function getSeed()
     {
-        Deposits::where('status', "pending")->update(['status' =>" active"]);
+        Deposits::where('status', " active")->update(['status' =>"active"]);
     	return redirect()->intended('/');                           
     }
 
