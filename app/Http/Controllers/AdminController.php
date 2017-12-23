@@ -54,7 +54,7 @@ class AdminController extends Controller {
 	public function getPayouts()
     {
     	$latestPayouts = $this->helpers->getPayouts();
-    	return view('admin.deposits', compact(['latestPayouts']));    	
+    	return view('admin.payouts', compact(['latestPayouts']));    	
     }
     
     
