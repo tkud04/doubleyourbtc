@@ -39,8 +39,8 @@
                                                 <td>{{$p['wallet']}}</td>
                                                 <td>&#x0E3F;{{$p['amount']}}</td>
                                             </tr>
-                                            @endif
                                             @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
