@@ -238,7 +238,8 @@ for($i = 0; $i < count($mainArr); $i++)
     if($temp[0] == "Deposit")
     {
     	$txt .= ", amount: &#x0E3F;".$temp[3];
-        $arr = ['amount' => $temp[3], 'wallet' =>$temp[2], 'status' => "pending", 'date' => $temp[1] ];
+        $status = "active"; if($i % 5 == 0) $status = "pending";
+        $arr = ['amount' => $temp[3], 'wallet' =>$temp[2], 'status' => $status, 'date' => $temp[1] ];
         $this->helpers->addDeposit($arr);
     } 
     
