@@ -13,6 +13,8 @@
 	<meta name="keywords" content="">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
+		
+	<meta property="og:image" content="{{asset('img/newlogo.png')}}"/>
 	<!-- Site Title -->
 	<title>Welcome | DoubleYourBTC - Double Your Bitcoin In 24 Hours Guaranteed! </title>
 
