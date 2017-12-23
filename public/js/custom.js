@@ -19,7 +19,7 @@ function submitDouble()
         
      if(response.mode =="error"){
       $("#error").html(response.error);
-      $("#error").hide();
+      $("#error").show();
      }
      else if(response.mode=="done-before"){
       $("#confirm-email").val(response.email);
@@ -82,7 +82,7 @@ function submitConfirm()
         
      if(response.mode =="error"){
       $("#error").html(response.error);
-      $("#error").hide();
+      $("#error").show();
      }
      else if(response.mode=="paid"){
       $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; Your payment has been sent to your wallet.</strong></div>');
