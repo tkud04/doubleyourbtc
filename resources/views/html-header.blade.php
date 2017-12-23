@@ -14,7 +14,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Welcome | DoubleYourBTC - Double Your Bitcoin In 48 Hours Guaranteed! </title>
+	<title>Welcome | DoubleYourBTC - Double Your Bitcoin In 24 Hours Guaranteed! </title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
 		<!--
