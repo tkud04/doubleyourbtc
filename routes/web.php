@@ -21,6 +21,7 @@ Route::post('admin', 'LoginController@postLogin');
 Route::get('admin/dashboard', 'AdminController@getDashboard');
 Route::get('admin/deposits', 'AdminController@getDeposits');
 Route::post('admin/change-deposit-status', 'AdminController@postChangeDepositStatus');
+Route::post('admin/change-payout-status', 'AdminController@postChangePayoutStatus');
 Route::get('admin/payouts', 'AdminController@getPayouts');
 Route::post('admin/add-payout', 'AdminController@postAddPayout');
 

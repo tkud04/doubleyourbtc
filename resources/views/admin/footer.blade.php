@@ -71,7 +71,7 @@
                       <label>Status*</label>
                       <select class="form-control" name="status">
                       	<option value="none">Select new status</option>
-                          <option value="processing">Processinh</option>
+                          <option value="processing">Processing</option>
                           <option value="paid">Paid</option>
                       </select>                    
                   </div>

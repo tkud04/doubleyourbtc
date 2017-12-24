@@ -118,5 +118,36 @@ class AdminController extends Controller {
                  }
                                        
 	}
+	
+	public function postChangePayoutStatus(Request $request)
+	{
+           $req = $request->all();
+          # dd($req);
+               
+                $validator = Validator::make($req, [
+                             'pay-num' => 'required|alpha_num',
+                             'status' => 'required|not_in:none'
+                   ]);
+         
+                 if($validator->fails())
+                  {
+                       $messages = $validator->messages();
+                      //dd($messages);
+             
+                      return redirect()->back()->withInput()->with('errors',$messages);
+                 }
+                
+                 else
+                 { 
+                     $p = Payouts::where('payout_id',$req['pay-num'])->first();
+                     
+                     if($p != null){
+                        $p->update(['status' => $req['status'] ]);
+                     } 
+                     Session::flash("change-status", "success");
+                     return redirect()->intended('admin/dashboard');                           
+                 }
+                                       
+	}
 
 }
