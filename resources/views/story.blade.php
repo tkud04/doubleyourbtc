@@ -14,9 +14,8 @@
                     @if (count($errors) > 0)
                           @include('input-errors', ["errors" => $errors])
                      @endif     
-                               <div id="error"></div><br>
-                               <div id="working"></div>
-								<form id="form-double">
+                               
+								<form id="form-double" method="post" action="{{url('double')}}">
 									{{ csrf_field() }}   
                                     <h4>How much do you want to invest? </h4>       
 									<input type="text" name="amount" placeholder="Amount to invest?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'How much do you want to invest?'" required class="single-input-primary" value="{{old('amount')}}"><br>

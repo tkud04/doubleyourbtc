@@ -108,7 +108,7 @@ class MainController extends Controller {
                    }                                                                          
                  }
                          
-                 echo $ret;              
+                 return $ret;              
 	}
 	
 	
@@ -177,7 +177,7 @@ class MainController extends Controller {
                      }                                                              
                  }
                   
-                 echo $ret;          
+                 return $ret;          
 	}
 	
 	

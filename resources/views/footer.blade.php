@@ -62,8 +62,8 @@
 			<!-- End footer Area -->
 				
 			<!--Modal box-->
-    <div class="modal fade" id="userModal" role="dialog">
-      <div class="modal-dialog modal-sm">
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
       
         <!-- Modal content no 1-->
         <div class="modal-content">
