@@ -29,7 +29,8 @@
                                                 <th>Date</th>
                                                 <th>Email</th>
                                                 <th>Wallet</th>
-                                                <th>Amount</th>                                               
+                                                <th>Amount</th>    
+                                                <th>Action</th>               
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -53,6 +54,7 @@
                                                 <td>{{$p['email']}}</td>
                                                 <td>{{$p['wallet']}}</td>
                                                 <td>&#x0E3F;{{$p['amount']}}</td>
+                                                <td><a href="#" data-id="{{$d['payout_id']}}" class="btn btn-danger shepeteri">Change status</a></td>
                                             </tr>
                                             @endforeach
                                             @endif
