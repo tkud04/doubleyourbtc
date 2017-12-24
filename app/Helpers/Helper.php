@@ -90,7 +90,7 @@ class Helper implements HelperContract
            
            	$ret = Payouts::create(['payout_id' => $payout_id, 
                                                       'email' => $data['email'], 
-                                                      'wallet' => $data['profit_wallet'], 
+                                                      'wallet' => $data['wallet'], 
                                                       'amount' => $data['amount'], 
                                                        'status' => "processing"
                                                       ]);
