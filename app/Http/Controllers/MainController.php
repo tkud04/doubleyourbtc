@@ -171,7 +171,8 @@ class MainController extends Controller {
                          } 
                          
                          else{
-                         	 $ret = "invalid";
+                         	 $arr2 = ['mode' => "invalid"];
+                             $ret = json_encode($arr2); 
                          } 
                         
                      }                                                              
