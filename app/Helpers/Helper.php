@@ -110,6 +110,7 @@ class Helper implements HelperContract
               	$temp = [];
               	$temp['id'] = $c->id;
                   $temp['deposit_id'] = $c->deposit_id;
+                  $temp['email'] = $c->email;
                   $temp['wallet'] = $c->wallet;
                   $temp['amount'] = $c->amount;
                   $temp['status'] = $c->status;
@@ -134,6 +135,8 @@ class Helper implements HelperContract
                   $temp['payout_id'] = $c->payout_id;
                   $temp['wallet'] = $c->wallet;
                   $temp['amount'] = $c->amount;
+                  $temp['email'] = $c->email;
+                  $temp['status'] = $c->status;
                   $temp["date"] = $c->created_at->format("D, jS F Y h:i A");
                   array_push($ret, $temp);
                  } 
