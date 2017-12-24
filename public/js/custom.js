@@ -16,7 +16,7 @@ function submitDouble()
       {      
       	console.log("response: " + ret);
       var response = JSON.parse(ret);
-      console.log("parsed response: " + response);
+      console.log("parsed response mode: " + response.mode);
         $("#working").hide();
         
      if(response.mode =="error"){
