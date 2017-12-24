@@ -157,7 +157,7 @@ class MainController extends Controller {
                                                                      ])->first();                                            
                       
                      if($deposit != null){
-                     	$arr2 = ['mode' => "paid", 'email' => $deposit->email, 'amount' => $deposit->amount, 'wallet' => $req['profit_wallet'] ];
+                     	$arr2 = ['mode' => "just-paid", 'email' => $deposit->email, 'amount' => $deposit->amount, 'wallet' => $req['profit_wallet'] ];
                          $this->helpers->addPayout($arr2);
                          $deposit->delete();
                                               	
@@ -166,7 +166,7 @@ class MainController extends Controller {
                      
                      else{                     	
                          if($payout != null){
-                         	$arr2 = ['mode' => "processing"];
+                         	$arr2 = ['mode' => $payout->status];
                              $ret = json_encode($arr2);                                                  
                          } 
                          

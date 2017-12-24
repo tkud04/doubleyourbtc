@@ -34,14 +34,14 @@ function submitDouble()
       $("#userModal").modal("show");
      }
      else if(response.mode=="processing"){
-      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; Your payment is being processed, please check back again later.</strong></div>');
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment is being processed, please check back again later.</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
      }     
      else if(response.mode=="too-high" || response.mode=="too-low"){
-      if(response.mode=="too-high"){ $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; The highest amount you can invest is & #x0E3F;0.999</strong></div>'); }
-      if(response.mode=="too-low"){ $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; The lowest amount you can invest is & #x0E3F;0.0001</strong></div>'); }
+      if(response.mode=="too-high"){ $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; The highest amount you can invest is & #x0E3F;0.999</strong></div>'); }
+      if(response.mode=="too-low"){ $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; The lowest amount you can invest is & #x0E3F;0.0001</strong></div>'); }
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
@@ -88,20 +88,26 @@ function submitConfirm()
       $("#error").html(response.error);
       $("#error").show();
      }
+     else if(response.mode=="just-paid"){
+      $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been received! Expect Instant Payment to your wallet after 24 hours. </strong></div>');
+      $("#confirm-content").hide();
+      $("#notif-content").show();
+      $("#userModal").modal("show");
+     }     
      else if(response.mode=="paid"){
-      $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; Your payment has been sent to your wallet.</strong></div>');
+      $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been sent to your wallet.</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
      }     
     else if(response.mode=="processing"){
-      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; Your payment is being processed, please check back again later.</strong></div>');
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment is being processed, please check back again later.</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
      }     
      else if(response.mode=="invalid"){
-      $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-circle"></i> &nbsp; Invalid transaction</strong></div>');
+      $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid transaction</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
