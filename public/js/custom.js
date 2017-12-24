@@ -79,7 +79,9 @@ function submitConfirm()
    },
    success :  function(ret)
       {      
+      console.log("response: " + ret);
       var response = JSON.parse(ret);
+      console.log("parsed response mode: " + response.mode);
         $("#working").hide();
         
      if(response.mode =="error"){
