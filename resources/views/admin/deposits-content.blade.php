@@ -26,10 +26,12 @@
                                         <thead>
                                             <tr>
                                                 <th>Deposit #</th>
-                                                <th>Date</th>
-                                                <th>Wallet</th>
-                                                <th>Amount</th>
                                                 <th>Status</th>
+                                                <th>Status #</th>
+                                                <th>Date</th>
+                                                <th>Email</th>
+                                                <th>Wallet</th>
+                                                <th>Amount</th>                                              
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -38,20 +40,26 @@
 								            @foreach($latestDeposits as $d) 
                                             <tr>
                                                 <td>{{$d['deposit_id']}}</td>
-                                                <td>{{$d['date']}}</td>
-                                                <td>{{$d['wallet']}}</td>
-                                                <td>&#x0E3F;{{$d['amount']}}</td>
                                                 <?php
-                                                   $class = ""; $txt = "";
+                                                   $class = ""; $txt = ""; $sn = "";
                                                    if($d['status'] == "pending"){
-                                                 	$class = "badge badge-warning"; $txt = "PENDING";
+                                                 	$class = "label label-warning"; $txt = "PENDING";
                                                    }
                                              
                                                   else if($d['status'] == "active"){
-                                                	$class = "badge badge-success"; $txt = "ACTIVE";
+                                                	$class = "label label-success"; $txt = "ACTIVE";
                                                   }
+                                                  
+                                                  if($d['status_number'] == "") $sn = "none";
+                                                  else $sn = $d['status_number'];
                                                 ?>
                                                 <td><span class="{{$class}}">{{$txt}}</span></td>
+                                                <td><span class="">{{$sn}}</span></td>
+                                                <td>{{$d['date']}}</td>
+                                                <td>{{$d['email']}}</td>
+                                                <td>{{$d['wallet']}}</td>
+                                                <td>&#x0E3F;{{$d['amount']}}</td>
+                                                
                                                 <td><a href="#" data-id="{{$d['deposit_id']}}" class="btn btn-danger shabba">Change status</a></td>
                                             </tr>
                                             @endforeach

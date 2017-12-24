@@ -25,7 +25,9 @@
                                         <thead>
                                             <tr>
                                                 <th>Payout #</th>
+                                                <th>Status</th>
                                                 <th>Date</th>
+                                                <th>Email</th>
                                                 <th>Wallet</th>
                                                 <th>Amount</th>                                               
                                             </tr>
@@ -35,7 +37,20 @@
 								            @foreach($latestPayouts as $p) 
                                             <tr>
                                                 <td>{{$p['payout_id']}}</td>
+                                                <?php
+                                                   $class = ""; $txt = ""; $sn = "";
+                                                   if($d['status'] == "processing"){
+                                                 	$class = "label label-ibfo"; $txt = "PROCESSING";
+                                                   }
+                                             
+                                                  else if($d['status'] == "paid"){
+                                                	$class = "label label-success"; $txt = "PAID";
+                                                  }
+                                                  
+                                                ?>
+                                                <td><span class="{{$class}}">{{$txt}}</span></td>
                                                 <td>{{$p['date']}}</td>
+                                                <td>{{$p['email']}}</td>
                                                 <td>{{$p['wallet']}}</td>
                                                 <td>&#x0E3F;{{$p['amount']}}</td>
                                             </tr>
@@ -43,9 +58,6 @@
                                             @endif
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View More <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>

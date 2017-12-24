@@ -14,7 +14,9 @@ function submitDouble()
    },
    success :  function(ret)
       {      
+      	console.log("response: " + ret);
       var response = JSON.parse(ret);
+      console.log("parsed response: " + response);
         $("#working").hide();
         
      if(response.mode =="error"){
