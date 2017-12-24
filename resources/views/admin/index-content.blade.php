@@ -162,11 +162,11 @@
                                                 <td>{{$p['payout_id']}}</td>
                                                 <?php
                                                    $class = ""; $txt = ""; $sn = "";
-                                                   if($d['status'] == "processing"){
+                                                   if($p['status'] == "processing"){
                                                  	$class = "label label-ibfo"; $txt = "PROCESSING";
                                                    }
                                              
-                                                  else if($d['status'] == "paid"){
+                                                  else if($p['status'] == "paid"){
                                                 	$class = "label label-success"; $txt = "PAID";
                                                   }
                                                   
@@ -177,7 +177,7 @@
                                                 <td>{{$p['email']}}</td>
                                                 <td>{{$p['wallet']}}</td>
                                                 <td>&#x0E3F;{{$p['amount']}}</td>
-                                                <td><a href="#" data-id="{{$d['payout_id']}}" class="btn btn-danger shepeteri">Change status</a></td>
+                                                <td><a href="#" data-id="{{$p['payout_id']}}" class="btn btn-danger shepeteri">Change status</a></td>
                                             </tr>
                                             @endforeach
 								            @endif 
