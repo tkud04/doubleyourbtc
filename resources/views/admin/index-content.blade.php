@@ -7,7 +7,7 @@
                                       <div class="col-lg-12">
                                         <div class="alert alert-info alert-dismissable">
                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                           <i class="fa fa-info-circle"></i>  <strong>Deposit status updated successfully!</strong>
+                                           <i class="fa fa-info-circle"></i>  <strong>Status updated successfully!</strong>
                                         </div>
                                      </div>
                                   </div>
@@ -163,7 +163,7 @@
                                                 <?php
                                                    $class = ""; $txt = ""; $sn = "";
                                                    if($p['status'] == "processing"){
-                                                 	$class = "label label-ibfo"; $txt = "PROCESSING";
+                                                 	$class = "label label-info"; $txt = "PROCESSING";
                                                    }
                                              
                                                   else if($p['status'] == "paid"){

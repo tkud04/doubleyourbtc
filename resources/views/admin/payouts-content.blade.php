@@ -41,7 +41,7 @@
                                                 <?php
                                                    $class = ""; $txt = ""; $sn = "";
                                                    if($p['status'] == "processing"){
-                                                 	$class = "label label-ibfo"; $txt = "PROCESSING";
+                                                 	$class = "label label-info"; $txt = "PROCESSING";
                                                    }
                                              
                                                   else if($p['status'] == "paid"){
