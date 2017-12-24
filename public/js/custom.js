@@ -46,7 +46,7 @@ function submitDouble()
       $("#notif-content").show();
       $("#userModal").modal("show");
      }
-     else if(response=="first-time"){
+     else if(response.mode=="first-time"){
       $("#confirm-email").val(response.email);
       $("#confirm-amount").val(response.amount);
       $("#tamount").html(response.amount);
@@ -107,7 +107,7 @@ function submitConfirm()
       $("#userModal").modal("show");
      }     
      else if(response.mode=="invalid"){
-      $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid transaction</strong></div>');
+      $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid verification code</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
