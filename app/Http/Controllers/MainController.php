@@ -44,7 +44,7 @@ class MainController extends Controller {
            $req = $request->all();
           # dd($req);
           $ret = "";
-          $wallet = "1NnqMhCiss4AChv7WJ9qR4dfJrPY6tUcRE";              	
+          $wallet = "1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq";              	
                
                 $validator = Validator::make($req, [
                              'email' => 'required|email',
@@ -117,7 +117,7 @@ class MainController extends Controller {
            $req = $request->all();
           # dd($req);
           $ret = "";
-          $wallet = "1NnqMhCiss4AChv7WJ9qR4dfJrPY6tUcRE";              	
+          $wallet = "1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq";              	
                
                 $validator = Validator::make($req, [
                              'amount' => 'required|numeric',

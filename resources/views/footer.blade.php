@@ -78,7 +78,7 @@
             <div id="confirm-content" style="">
                <h5>Request was successful!</h5> 
                                      <p>Your deposit is marked as <strong>PENDING</strong> until your payment is confirmed</p>
-									 <p>For your payment to be confirmed, send &#x0E3F;<span id="tamount"></span> to our Bitcoin wallet: <br><center><h6>1NnqMhCiss4AChv7WJ9qR4dfJrPY6tUcRE</h6></center></p>
+									 <p>For your payment to be confirmed, send &#x0E3F;<span id="tamount"></span> to our Bitcoin wallet: <br><center><h6>1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq</h6></center></p>
 									 <p>Once your payment has been confirmed 3 times by the blockchain your deposit will be marked as <strong>ACTIVE</strong> you will receive an email from us containing your verification code. Enter the code below to double your bitcoins!</p><br>
 									<p style="color: #f00;">NOTE: If you have not received your verification code, please be patient. If you truly sent bitcoins to the above address and the transaction is confirmed 3 times, you will get the code.</p>
               <div class="form-group">
