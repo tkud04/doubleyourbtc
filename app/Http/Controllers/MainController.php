@@ -123,6 +123,7 @@ class MainController extends Controller {
                              'amount' => 'required|numeric',
                              'email' => 'required|email', 
                              'profit_wallet' => 'required', 
+                             'wallet' => 'required', 
                              'status_number' => 'required'
                    ]);
          
@@ -153,11 +154,11 @@ class MainController extends Controller {
                     $payout =Payouts::where([ ['email',$req['email'] ],                                                                       
                                                                         ['amount',$req['amount'] ], 
                                                                         ['status', "processing"], 
-                                                                        ['wallet', $req['profit_wallet'] ]
+                                                                        ['wallet', $req['wallet'] ]
                                                                      ])->first();                                            
                       
                      if($deposit != null){
-                     	$arr2 = ['mode' => "just-paid", 'email' => $deposit->email, 'amount' => $deposit->amount, 'wallet' => $req['profit_wallet'] ];
+                     	$arr2 = ['mode' => "just-paid", 'email' => $deposit->email, 'amount' => $deposit->amount, 'wallet' => $req['wallet'] ];
                          $this->helpers->addPayout($arr2);
                          $deposit->delete();
                                               	

@@ -85,6 +85,7 @@
               	<div id="error"></div><br>
                                <div id="working"></div>
                 <form id="form-confirm">
+                	<img src = "{{asset('img/loading.gif')}}" width="70" height="70" class="img img-responsive loading-gif">
                      {{ csrf_field() }}   
                 	<input type="hidden" id = "confirm-email" name="email" value="">
                 	<input type="hidden" id = "confirm-amount" name="amount" value="">
@@ -92,6 +93,10 @@
                  <div class="form-group has-feedback"> <!----- username -------------->
                       <label>Verification Code*</label>
                       <input type="text" class="form-control" name="status_number" placeholder="Verification code.."> 
+                  </div>
+                  <div class="form-group has-feedback"> <!----- username -------------->
+                      <label>Your wallet address*</label>
+                      <input type="text" class="form-control" name="wallet" placeholder="Wallet address (we'll send profits here)"> 
                   </div>
                   <div class="row">     
                       <div class="col-xs-12">

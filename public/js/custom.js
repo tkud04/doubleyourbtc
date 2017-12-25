@@ -10,10 +10,12 @@ function submitDouble()
    beforeSend: function()
    { 
     $("#error").fadeOut();
+    $(".loading-gif").fadeIn();
     $("#working").html('<br><br><div class="alert alert-info" role="alert" style=" text-align: center;"><strong class="block" style="font-weight: bold;">  <i class = "fa fa-spinner fa-2x slow-spin"></i>  Processing.... </strong></div>');
    },
    success :  function(ret)
       {      
+      	$(".loading-gif").hide();
       	console.log("response: " + ret);
       var response = JSON.parse(ret);
       console.log("parsed response mode: " + response.mode);
@@ -75,10 +77,12 @@ function submitConfirm()
    beforeSend: function()
    { 
     $("#error").fadeOut();
+    $(".loading-gif").fadeIn();
     $("#working").html('<br><br><div class="alert alert-info" role="alert" style=" text-align: center;"><strong class="block" style="font-weight: bold;">  <i class = "fa fa-spinner fa-2x slow-spin"></i>  Processing.... </strong></div>');
    },
    success :  function(ret)
       {      
+      $(".loading-gif").hide();
       console.log("response: " + ret);
       var response = JSON.parse(ret);
       console.log("parsed response mode: " + response.mode);
@@ -121,6 +125,7 @@ function submitConfirm()
     
     
    $(document).ready(function(){ 
+   	$(".loading-gif").hide();
   $("#form-double").submit(function(e){
   	e.preventDefault();
      submitDouble();

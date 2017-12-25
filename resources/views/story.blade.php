@@ -16,6 +16,7 @@
                      @endif     
                                
 								<form id="form-double" method="post" action="{{url('double')}}">
+									<img src = "{{asset('img/loading.gif')}}" width="70" height="70" class="img img-responsive">
 									{{ csrf_field() }}   
                                     <h4>How much do you want to invest? </h4>       
 									<input type="text" name="amount" placeholder="Amount to invest?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'How much do you want to invest?'" required class="single-input-primary" value="{{old('amount')}}"><br>
