@@ -165,8 +165,18 @@ class MainController extends Controller {
                          $ret = json_encode($arr2);                                                                     
                      } 
                      
-                     else{                     	
-                         if($payout != null){
+                     else{          
+            	         $deposit = $deposit =Deposits::where([ ['email',$req['email'] ],                                                                       
+                                                                        ['amount',$req['amount'] ], 
+                                                                        ['status', "pending"]
+                                                                     ])->first();  
+                          
+                         if($deposit != null){
+                         	 $arr2 = ['mode' => "wrong-status-number"];
+                             $ret = json_encode($arr2); 
+                         } 
+      
+                         else if($payout != null){
                          	$arr2 = ['mode' => $payout->status];
                              $ret = json_encode($arr2);                                                  
                          } 

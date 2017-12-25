@@ -93,13 +93,13 @@ function submitConfirm()
       $("#error").show();
      }
      else if(response.mode=="just-paid"){
-      $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been received! Expect Instant Payment to your wallet after 24 hours. </strong></div>');
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been received! Expect Instant Payment to your wallet after 24 hours. </strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
      }     
      else if(response.mode=="paid"){
-      $("#notif").html('<div class="alert alert-success alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been sent to your wallet.</strong></div>');
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Your payment has been sent to your wallet.</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
@@ -110,8 +110,14 @@ function submitConfirm()
       $("#notif-content").show();
       $("#userModal").modal("show");
      }     
+     else if(response.mode=="wrong-status-number"){
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid verification code</strong></div>');
+      $("#confirm-content").hide();
+      $("#notif-content").show();
+      $("#userModal").modal("show");
+     }
      else if(response.mode=="invalid"){
-      $("#notif").html('<div class="alert alert-warning alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid verification code</strong></div>');
+      $("#notif").html('<div class="alert alert-info alert-dismissable"><strong class="block"> <i class="fa fa-info-circle"></i> &nbsp; Invalid verification code</strong></div>');
       $("#confirm-content").hide();
       $("#notif-content").show();
       $("#userModal").modal("show");
