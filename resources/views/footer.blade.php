@@ -110,8 +110,8 @@
             <!-- content 3-->
             <div id="notif-content">
               <p class="">Notification</p>                  
-              <div class="jumbotron" id="notif">
-              
+              <div class="well">
+                <div id="notif"></div>
               <br><button class="btn btn-primary notif-close">Close</button>
               </div>
             </div>
