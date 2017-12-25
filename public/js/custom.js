@@ -141,4 +141,9 @@ function submitConfirm()
   	e.preventDefault();
      submitConfirm();
   });
+  
+  $(".notif-close").submit(function(e){
+  	e.preventDefault();
+     $("#userModal").modal("hide");
+  });
 });
