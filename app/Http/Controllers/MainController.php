@@ -69,6 +69,8 @@ class MainController extends Controller {
                  else
                  { 
                  	$email = $req['email'];
+                     $req['amount'] = floatval($req['amount']);
+                     
                      $deposit =Deposits::where([ ['email',$email], 
                                                                         ['amount',$req['amount'] ], 
                                                                         ['status', "pending"]

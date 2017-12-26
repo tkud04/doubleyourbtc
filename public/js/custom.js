@@ -144,6 +144,6 @@ function submitConfirm()
   
   $(".notif-close").submit(function(e){
   	e.preventDefault();
-     $("#userModal").modal("hide");
+     $("#userModal").fadeOut();
   });
 });
