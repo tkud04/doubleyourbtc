@@ -1,5 +1,6 @@
-@extends('layout')
-@section('title', $title)
+@extends("layout")
+
+@section('title',"Deposit")
 
 @section('content') 
 <!-- Start Story Area -->
