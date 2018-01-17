@@ -4,7 +4,7 @@
 
 @section('content') 
 <!-- Start Story Area -->
-			<section class="banner-area">
+			<section class="story-area">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-12">
