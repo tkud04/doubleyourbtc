@@ -3,7 +3,7 @@
 @section('title',"Deposit")
 
 @section('content') 
-<section class="banner-area">DoubleYourBTC</section>
+<section class="banner-area">DoubleYourBTC<br><br><br></section>
 <!-- Start Story Area -->
 			<section class="story-area">
 				<div class="container">
