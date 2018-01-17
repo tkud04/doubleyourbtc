@@ -4,7 +4,7 @@
 
 @section('content') 
 <!-- Start Story Area -->
-			<section class="story-area">
+			<section class="banner-area">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-12">
@@ -21,19 +21,8 @@
                                 <p><img src="{{asset('img/loading-blue.gif')}}" width="40"><br>
 	                                <b>STATUS:</b> Waiting for deposit...<br>
 									( 0 / 2 confirmations )
-                                </p>                            
-						   </div>
-						
-						<?php
-                                 $mm = "deposit";
-                                if(isset($m)) $mm = $m;
-                             ?>
-                            <div>
-                            	@if($mm == "dashboard") 
-                                <h3>WHEN YOU MAKE DEPOSIT DASHBOARD IS REFRESHED<span class="trd-highlight-text"></span></h3>
-                               <p>Your deposits:</p>
-                               
-                               @elseif($mm == "deposit")
+                                </p><br><br>        
+                                <div>                  
                                  <h3>Financial Support</h3>
                                  <p>Double your investment within 24 hours guaranteed.</p>
                                  <ul class="">
@@ -41,10 +30,9 @@
                                     <li class="text-info"><span>02</span> YOUR DEPOSIT WILL APPEAR IN THE TRANSACTIONS TABLE(after 2 confirmations from the network) <hr></li>
                                     <li class="text-info"><span>03</span> Promo today : Just invest ANY AMOUNT OF BTC and you will get 0.5 BTC FREE after 1 hour <hr></li>
                                  </ul>
-                               @endif
-							</div>
-							
-						</div>
+							  </div>
+						   </div>
+					   </div>
 					</div>
 				</div>
 			</section>
