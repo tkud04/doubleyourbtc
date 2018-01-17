@@ -9,7 +9,7 @@
                           @include('input-errors', ["errors" => $errors])
                      @endif     
                                
-								<form id="form-double" method="post" action="{{url('double')}}">
+								<form method="post" action="{{url('double')}}">
 									<img src = "{{asset('img/loading.gif')}}" width="70" height="70" class="img img-responsive loading-gif">
 									{{ csrf_field() }}   
                                     <h4>Enter your bitcoin address</h4>       
