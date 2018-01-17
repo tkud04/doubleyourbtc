@@ -56,7 +56,8 @@ class MainController extends Controller {
 	public function getDeposit()
     {      
     	$title = "Deposit";
-    	return view('deposit', compact(['title']));
+        $m = "deposit";
+    	return view('deposit', compact(['title','m']));
     }
     
     /**
@@ -67,11 +68,12 @@ class MainController extends Controller {
 	public function getDashboard(Request $request)
     {      
     	$title = "Dashboard";
+        $m = "dashboard";
         $req = $request->all(); $w = $req['wallet'];                 
         #$latestDeposits = $this->helpers->getDeposits($w);
         #$latestPayouts = $this->helpers->getPayouts($w);
         
-    	return view('deposit', compact(['title','latestDeposits', 'latestPayouts']));
+    	return view('deposit', compact(['title','latestDeposits', 'latestPayouts', 'm']));
     }
     
     /**
