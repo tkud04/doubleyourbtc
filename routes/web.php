@@ -15,6 +15,8 @@ Route::get('/', 'MainController@getIndex');
 Route::get('invest', 'MainController@getInvest');
 Route::get('support', 'MainController@getSupport');
 Route::get('terms', 'MainController@getTerms');
+Route::get('deposit', 'MainController@getDeposit');
+Route::get('dashboard', 'MainController@getDashboard');
 Route::post('double', 'MainController@postSignup');
 Route::post('confirm', 'MainController@postDouble');
 Route::get('seed', 'MainController@getSeed');

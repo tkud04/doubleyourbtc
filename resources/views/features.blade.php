@@ -9,7 +9,6 @@
                         </center>
 					</div>
 					<div class="row">
-						<center>
 						<div class="col-md-4">
 							<div class="single-feature d-flex flex-wrap justify-content-between">
 								<div class="icon d-flex align-items-center justify-content-center">
@@ -43,7 +42,6 @@
 								</div>
 							</div>
 						</div>
-						</center>
 					</div>
 				</div>
 			</section>
