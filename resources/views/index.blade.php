@@ -1,8 +1,9 @@
-@include("html-header")
-@include("header")
+@extends("layout")
+@section('title', "Welcome")
+
+@section('content') 
 @include("banner")
 @include("features")
 @include("story")
 @include("works")
-@include("footer")
-@include("html-footer")
+@stop

@@ -38,6 +38,62 @@ class MainController extends Controller {
     	return view('index', compact(['latestDeposits', 'latestPayouts','totalDepositAccounts', 'totalPayoutTransactions', 'totalDeposit', 'totalPayout']));
     }
     
+    /**
+	 * Show the application Invest screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getInvest()
+    {       
+    	return view('invest');
+    }
+    
+        /**
+	 * Show the application Deposit screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getDeposit()
+    {      
+    	$title = "Deposit";
+    	return view('deposit', compact(['title']));
+    }
+    
+    /**
+	 * Show the application Deposit screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getDashboard(Request $request)
+    {      
+    	$title = "Dashboard";
+        $req = $request->all(); $w = $req['wallet'];                 
+        #$latestDeposits = $this->helpers->getDeposits($w);
+        #$latestPayouts = $this->helpers->getPayouts($w);
+        
+    	return view('deposit', compact(['title','latestDeposits', 'latestPayouts']));
+    }
+    
+    /**
+	 * Show the application Support screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getSupport()
+    {       
+    	return view('support');
+    }
+    
+    /**
+	 * Show the application Disclaimer screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getTerms()
+    {       
+    	return view('terms');
+    }
+    
     
     public function postSignup(Request $request)
 	{
@@ -47,70 +103,46 @@ class MainController extends Controller {
           $wallet = "1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq";              	
                
                 $validator = Validator::make($req, [
-                             'email' => 'required|email',
-                             'amount' => 'required|numeric',
+                             'wallet' => 'required',
                    ]);
          
                  if($validator->fails())
                   {
                        $messages = $validator->messages();
-                       //return redirect()->back()->withInput()->with('errors',$messages);
+                       return redirect()->back()->withInput()->with('errors',$messages);
                        //dd($messages);
              
-                       $r = "<div class='alert alert-danger'><strong>Whoops!</strong> There were some problems signing you in.<br><br>";
+                      /* $r = "<div class='alert alert-danger'><strong>Whoops!</strong> There were some problems signing you in.<br><br>";
                        $r .= "<ul>";
 					
                        foreach($messages->all() as $error) $ret .= "<li>".$error."</li>";
             
                        $r .= "</ul></div>";
                        $ret = ['mode' => "error", 'error' => $r];
+                       */
                  }
                 
                  else
                  { 
-                 	$email = $req['email'];
-                     $req['amount'] = floatval($req['amount']);
+                 	$w = $req['wallet'];                     
                      
-                     $deposit =Deposits::where([ ['email',$email], 
-                                                                        ['amount',$req['amount'] ], 
+                     $deposit =Deposits::where([ ['wallet',$w], 
                                                                         ['status', "pending"]
                                                                      ])->first();
                     
-                    $payout =Payouts::where([ ['email',$req['email'] ],                                                                      
-                                                                        ['amount',$req['amount'] ], 
+                    $payout =Payouts::where([ ['wallet',$w],                                                                      
                                                                         ['status', "processing"], 
                                                                      ])->first();                                 
                       
-                     if($deposit != null){
-                     	$arr2 = ['mode' => "done-before", 'email' => $deposit->email, 'amount' => $deposit->amount, 'wallet' => $wallet];
-                         $ret = json_encode($arr2);
-                     } 
-                     
-                     else{
-                      if($payout != null){
-                         	$arr2 = ['mode' => "processing"];
-                             $ret = json_encode($arr2);                                                  
-                         } 
-                         
-                 	else if($req['amount'] > 0.9999 || $req['amount'] < 0.0001)
-                      {
-                         if($req['amount'] > 0.9999) $ret = "too-high";
-                         else if($req['amount'] < 0.0001) $ret = "too-low";
-                      }
-                      
-                      else
-                      {                            	
+                                             	
                           $statusNumber = $this->helpers->getStatusNumber();
-                          $arr = ['email' => $req['email'], 'amount' => $req['amount'], 'wallet' => "", 'status_number' => $statusNumber];                          
+                          $arr = ['email' => "", 'amount' => "", 'wallet' => $w, 'status_number' => $statusNumber];                          
                           $this->helpers->addDeposit($arr);
-                          $this->helpers->sendEmail("kudayisitobi@gmail.com" ,"Client Is About To Deposit Bitcoin",['arr' => $arr],'emails.deposit_alert','view');                     	
-                          $arr2 = ['mode' => "first-time", 'amount' => $req['amount'], 'wallet' => $wallet];
-                          $ret = json_encode($arr2);
-                      }  
-                   }                                                                          
-                 }
-                         
-                 return $ret;              
+                          $this->helpers->sendEmail("kudayisitobi@gmail.com" ,"Client Is About To Deposit Bitcoin",['arr' => $arr],'emails.deposit_alert','view');  
+                          Session::flash("w", $w);              
+    	                  Session::flash("wallet", $wallet);              
+                          return redirect()->intended('deposit');                       
+                   }                                                                                                   
 	}
 	
 	

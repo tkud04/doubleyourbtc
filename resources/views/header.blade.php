@@ -7,8 +7,10 @@
 							</div>
 							<div class="main-menubar d-flex align-items-center">
 								<nav class="hide">
-									<a href="#banner">Home</a>
-									<a href="#story">Double bitcoins</a>
+									<a href="{{url('/')}}">Home</a>
+									<a href="{{url('invest')}}">Invest</a>
+									<a href="{{url('support')}}">Support</a>
+									<a href="{{url('terms')}}">Disclaimer</a>
 								</nav>
 								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
 							</div>

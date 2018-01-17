@@ -16,7 +16,7 @@
 		
 	<meta property="og:image" content="{{asset('img/newlogo.png')}}"/>
 	<!-- Site Title -->
-	<title>Welcome | DoubleYourBTC - Double Your Bitcoin In 24 Hours Guaranteed! </title>
+	<title>@yield('title') | DoubleYourBTC - Double Your Bitcoin In 24 Hours Guaranteed! </title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
 		<!--
