@@ -143,7 +143,7 @@ class MainController extends Controller {
                        */
                  }
                  
-                 else if($req['wallet']) < 32)
+                 else if(strlen($req['wallet']) < 32)
 				 {
 					Session::flash("input-error", "true");
 					return redirect()->back();
