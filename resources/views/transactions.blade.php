@@ -51,7 +51,7 @@
                                                   $tclass = "label label-success"; $ttxt = "PAYOUT";                                                  
                                                   }                                                  
 												
-								                else if($type == "deposit"){ 
+								                else if($type == "deposits"){ 
 												  $tclass = "label label-info"; $ttxt = "DEPOSIT";
 												  $p = $deposits[$i];
 											    } 
