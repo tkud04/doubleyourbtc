@@ -87,7 +87,9 @@ class MainController extends Controller {
         $m = "transactions";       
         $deposits = "";
         $payouts= "";
+        $status = "find"
         if($id != ""){
+          $status = "view";
           $deposits = $this->helpers->getDeposits($id);
           $payouts = $this->helpers->getPayouts($id);
        } 
