@@ -103,7 +103,7 @@ class Helper implements HelperContract
            function getDeposits($email="")
           {
           	$ret = [];
-              if($email == "") $deposits = Deposits::where('email', $email)->orderBy('created_at', 'desc')->get();
+              if($email != "") $deposits = Deposits::where('email', $email)->orderBy('created_at', 'desc')->get();
           	else $deposits = Deposits::orderBy('created_at', 'desc')->get();
           	 if($deposits != null)
               {
@@ -127,7 +127,7 @@ class Helper implements HelperContract
           function getPayouts($email = "")
           {
           	$ret = [];
-              if($email == "") $payouts = Payouts::where('email', $email)->orderBy('created_at', 'desc')->get();
+              if($email != "") $payouts = Payouts::where('email', $email)->orderBy('created_at', 'desc')->get();
           	else $payouts = Payouts::orderBy('created_at', 'desc')->get();
           	 if($payouts != null)
               {
