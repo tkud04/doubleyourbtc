@@ -8,8 +8,8 @@ Interface HelperContract
         public function getStatusNumber();
         public function addDeposit($data);
         public function addPayout($data);
-        public function getDeposits($email);
-        public function getPayouts($email);
+        public function getDeposits($wallet);
+        public function getPayouts($wallet);
         public function getLatestDeposits();
         public function getLatestPayouts();
 }

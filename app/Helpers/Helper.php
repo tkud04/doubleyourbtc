@@ -100,10 +100,10 @@ class Helper implements HelperContract
            } 
            
            
-           function getDeposits($email="")
+           function getDeposits($wallet="")
           {
           	$ret = [];
-              if($email != "") $deposits = Deposits::where('email', $email)->orderBy('created_at', 'desc')->get();
+              if($wallet != "") $deposits = Deposits::where('wallet', $wallet)->orderBy('created_at', 'desc')->get();
           	else $deposits = Deposits::orderBy('created_at', 'desc')->get();
           	 if($deposits != null)
               {
@@ -124,10 +124,10 @@ class Helper implements HelperContract
           }
           
           
-          function getPayouts($email = "")
+          function getPayouts($wallet = "")
           {
           	$ret = [];
-              if($email != "") $payouts = Payouts::where('email', $email)->orderBy('created_at', 'desc')->get();
+              if($wallet != "") $payouts = Payouts::where('wallet', $wallet)->orderBy('created_at', 'desc')->get();
           	else $payouts = Payouts::orderBy('created_at', 'desc')->get();
           	 if($payouts != null)
               {
