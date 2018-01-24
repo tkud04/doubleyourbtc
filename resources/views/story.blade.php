@@ -7,6 +7,8 @@
 								<!--------- Input errors -------------->
                     @if (count($errors) > 0)
                           @include('input-errors', ["errors" => $errors])
+                     @elseif(Session::has("input-error") && Session::get("input-error") == "true") 
+                         <div class="alert alert-danger">Please enter a valid wallet address</div><br>
                      @endif     
                                
 								<form method="post" action="{{url('double')}}">

@@ -142,6 +142,12 @@ class MainController extends Controller {
                        $ret = ['mode' => "error", 'error' => $r];
                        */
                  }
+                 
+                 else if($req['wallet']) < 32)
+				 {
+					Session::flash("input-error", "true");
+					return redirect()->back();
+				 }
                 
                  else
                  { 
@@ -185,7 +191,7 @@ class MainController extends Controller {
                  if($validator->fails())
                   {
                        $messages = $validator->messages();
-                       //return redirect()->back()->withInput()->with('errors',$messages);
+                       return redirect()->back()->withInput()->with('errors',$messages);
                        //dd($messages);
              
                        $r = "<div class='alert alert-danger'><strong>Whoops!</strong> There were some problems signing you in.<br><br>";
