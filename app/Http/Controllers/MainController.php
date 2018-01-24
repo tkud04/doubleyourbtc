@@ -273,7 +273,7 @@ class MainController extends Controller {
         
                
                 $validator = Validator::make($req, [
-                             'email' => 'required|email',
+                             'wallet' => 'required',
                    ]);
          
                  if($validator->fails())
@@ -284,17 +284,17 @@ class MainController extends Controller {
                 
                  else
                  { 
-                 	$email = $req['email'];    
+                 	$wallet = $req['wallet'];    
                      $title = "Transactions";
                      $m = "transactions";                 
                      
-                     $deposits =$this->helpers->getDeposits($email);
-                     $payouts =$this->helpers->getPayouts($email);
+                     $deposits =$this->helpers->getDeposits($wallet);
+                     $payouts =$this->helpers->getPayouts($wallet);
                      $ret = array_merge($deposits, $payouts);
           #dd($ret);
                                        
                      $status= "view";              
-                     return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
+                     return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status', 'ret']));
                    }                                                                                                   
 	}
 

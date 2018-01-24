@@ -19,8 +19,8 @@
                                <form method="post" action="{{url('transactions')}}">
 									<img src = "{{asset('img/loading.gif')}}" width="70" height="70" class="img img-responsive loading-gif">
 									{{ csrf_field() }}   
-                                    <h4>Enter your email address</h4>       
-									<input type="text" name="email" placeholder="Enter your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email address'" required class="single-input-primary" value="{{old('email')}}"><br>
+                                    <h4>Enter your wallet address</h4>       
+									<input type="text" name="wallet" placeholder="Enter your wallet address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your wallet address'" required class="single-input-primary" value="{{old('wallet')}}"><br>
 					
 									<button type="submit" class="genric-btn primary radius">Submit</button>
 								</form>
