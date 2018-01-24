@@ -290,8 +290,8 @@ class MainController extends Controller {
                      $deposits =$this->helpers->getDeposits($email);
                      $payouts =$this->helpers->getPayouts($email);
                                        
-                     Session::flash("status", "view");              
-                     return view('transactions', compact(['title','deposits', 'payouts', 'm']));
+                     $status= "view";              
+                     return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
                    }                                                                                                   
 	}
 
