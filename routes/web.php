@@ -18,6 +18,8 @@ Route::get('terms', 'MainController@getTerms');
 Route::get('deposit', 'MainController@getDeposit');
 Route::get('dashboard', 'MainController@getDashboard');
 Route::post('double', 'MainController@postSignup');
+Route::get('transactions', 'MainController@getTransactions');
+Route::post('transactions', 'MainController@postTransactions');
 Route::post('confirm', 'MainController@postDouble');
 Route::get('seed', 'MainController@getSeed');
 

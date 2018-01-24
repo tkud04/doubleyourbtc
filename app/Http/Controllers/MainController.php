@@ -77,6 +77,25 @@ class MainController extends Controller {
     }
     
     /**
+	 * Show the application Deposit screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getTransactions($id="")
+    {      
+    	$title = "Transactions";
+        $m = "transactions";       
+        $deposits = "";
+        $payouts= "";
+        if($id != ""){
+          $deposits = $this->helpers->getDeposits($id);
+          $payouts = $this->helpers->getPayouts($id);
+       } 
+        
+    	return view('transactions', compact(['title','deposits', 'payouts', 'm']));
+    }
+    
+    /**
 	 * Show the application Support screen to the user.
 	 *
 	 * @return Response
@@ -139,9 +158,9 @@ class MainController extends Controller {
                                              	
                           $statusNumber = $this->helpers->getStatusNumber();
                           $arr = ['email' => "", 'amount' => "", 'wallet' => $w, 'status_number' => $statusNumber];                          
-                          $this->helpers->addDeposit($arr);
-                          $this->helpers->sendEmail("kudayisitobi@gmail.com" ,"Client Is About To Deposit Bitcoin",['arr' => $arr],'emails.deposit_alert','view');  
-                          Session::flash("w", $w);              
+                          $deposit = $this->helpers->addDeposit($arr);
+                          $this->helpers->sendEmail("kudayisitobi@gmail.com" ,"User About To Deposit Bitcoin",['arr' => $arr],'emails.deposit_alert','view');  
+                          Session::flash("id", $deposit->id);              
     	                  Session::flash("wallet", $wallet);              
                           return redirect()->intended('deposit');                       
                    }                                                                                                   
@@ -234,5 +253,37 @@ class MainController extends Controller {
         Deposits::where('status', " active")->update(['status' =>"active"]);
     	return redirect()->intended('/');                           
     }
+    
+    
+    public function postTransactions(Request $request)
+	{
+           $req = $request->all();
+          # dd($req);
+          $deposits = null; $payouts= null;
+        
+               
+                $validator = Validator::make($req, [
+                             'email' => 'required|email',
+                   ]);
+         
+                 if($validator->fails())
+                  {
+                       $messages = $validator->messages();
+                       return redirect()->back()->withInput()->with('errors',$messages);
+                 }
+                
+                 else
+                 { 
+                 	$email = $req['email'];    
+                     $title = "Transactions";
+                     $m = "transactions";                 
+                     
+                     $deposits =$this->helpers->getDeposits($email);
+                     $payouts =$this->helpers->getPayouts($email);
+                                       
+                     Session::flash("status", "view");              
+                     return view('transactions', compact(['title','deposits', 'payouts', 'm']));
+                   }                                                                                                   
+	}
 
 }
