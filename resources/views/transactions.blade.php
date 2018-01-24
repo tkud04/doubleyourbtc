@@ -19,8 +19,8 @@
                                <form method="post" action="{{url('transactions')}}">
 									<img src = "{{asset('img/loading.gif')}}" width="70" height="70" class="img img-responsive loading-gif">
 									{{ csrf_field() }}   
-                                    <h4>Enter your email</h4>       
-									<input type="text" name="email" placeholder="Enter your bitcoin address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your bitcoin email'" required class="single-input-primary" value="{{old('email')}}"><br>
+                                    <h4>Enter your email address</h4>       
+									<input type="text" name="email" placeholder="Enter your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email address'" required class="single-input-primary" value="{{old('email')}}"><br>
 					
 									<button type="submit" class="genric-btn primary radius">Submit</button>
 								</form>
@@ -40,7 +40,7 @@
                                              <?php $total = count($payouts) + count($deposits);  ?>
 								            @for($i = 0; $i < $total; $i++) 
 								             <?php
-											    $type = $shuffle(["deposits", "payouts"]); 
+											    $type = shuffle(["deposits", "payouts"]); 
 											    if($type == "payouts" && !isset($payouts[$i])) $type = "deposits";
 											    else if($type == "deposits" && !isset($deposits[$i])) $type = "payouts";
 											    $p = [];
