@@ -9,7 +9,7 @@
 								<nav class="hide">
 									<a href="{{url('/')}}">Home</a>
 									<a href="{{url('invest')}}">Invest</a>
-									<a href="{{url('transactions')}}">My Transactions</a>
+									<a href="{{url('transactions')}}">Transactions</a>
 									<a href="{{url('support')}}">Support</a>
 									<a href="{{url('terms')}}">Disclaimer</a>
 								</nav>

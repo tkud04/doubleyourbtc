@@ -78,7 +78,7 @@
                                                 <td><span class="{{$sclass}}">{{$stxt}}</span></td>                                              
                                                 <td>{{$p['date']}}</td>
                                             </tr>
-                                            @endforeach
+                                            @endfor
                                             @endif
                                         </tbody>
                                     </table>

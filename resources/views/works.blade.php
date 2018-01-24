@@ -30,17 +30,16 @@
 							<div class="progress-table">
 								<div class="table-head">
 									<div class="transaction-id">#</div>
-									<div class="date">Time</div>
 									<div class="wallet-address">Wallet</div>
 									<div class="amount">Amount</div>
 									<div class="status">Status</div>
+									<div class="date">Time</div>
 								</div>
 								
 								@if(isset($latestDeposits) && count($latestDeposits) > 0)
 								@foreach($latestDeposits as $d) 
 								<div class="table-row">
 									<div class="transaction-id">{{$d['deposit_id']}}</div>
-									<div class="date">{{$d['date']}}</div>
 									<div class="wallet-address">{{$d['wallet']}}</div>
 									<div class="amount">&#x0e3f;{{$d['amount']}}</div>
 									<div class="status">
@@ -56,6 +55,7 @@
                                         ?>
 										<span class="{{$class}}">{{$txt}}</span>
 									</div>
+									<div class="date">{{$d['date']}}</div>
 								</div>
 								@endforeach
 								@endif 
@@ -74,18 +74,18 @@
 							<div class="progress-table">
 								<div class="table-head">
 									<div class="transaction-id">#</div>
-									<div class="date">Time</div>
 									<div class="wallet-address">Wallet</div>
 									<div class="amount">Amount</div>
+									<div class="date">Time</div>
 								</div>
 								
 								@if(isset($latestPayouts) && count($latestPayouts) > 0)
 								@foreach($latestPayouts as $p) 
 								<div class="table-row">
 									<div class="transaction-id">{{$p['payout_id']}}</div>
-									<div class="date">{{$p['date']}}</div>
 									<div class="wallet-address">{{$p['wallet']}}</div>
 									<div class="amount">&#x0e3f;{{$p['amount']}}</div>
+									<div class="date">{{$p['date']}}</div>
 								</div>
 								@endforeach
 								@endif 
