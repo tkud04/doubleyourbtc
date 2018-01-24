@@ -36,24 +36,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        	@if(isset($payouts) && isset($deposits) && count($payouts) > 0 && count($deposits) > 0)
-                                             <?php $total = count($payouts) + count($deposits);  ?>
-								            @for($i = 0; $i < $total; $i++) 
+                                        	@if(isset($ret) && count($ret) > 0)
+								            @foreach($ret as $p) 
 								             <?php
 								                 $types = ["deposits", "payouts"];
 											    $type = shuffle($types); 
-											    if($type == "payouts" && !isset($payouts[$i])) $type = "deposits";
-											    else if($type == "deposits" && !isset($deposits[$i])) $type = "payouts";
-											    $p = [];
+											    if(isset($p["deposit_id"])) $type = "deposits";
+											    else if(isset($p["payout_id"])) $type = "payouts";
 											
 											    if($type == "payouts"){ 
-												   $p = $payouts[$i];
+												   
                                                   $tclass = "label label-success"; $ttxt = "PAYOUT";                                                  
                                                   }                                                  
 												
 								                else if($type == "deposits"){ 
 												  $tclass = "label label-info"; $ttxt = "DEPOSIT";
-												  $p = $deposits[$i];
+												
 											    } 
 											
 											    $sclass = ""; $stxt = ""; $sn = "";
@@ -79,7 +77,9 @@
                                                 <td><span class="{{$sclass}}">{{$stxt}}</span></td>                                              
                                                 <td>{{$p['date']}}</td>
                                             </tr>
-                                            @endfor
+                                            @endforeach
+                                            @else
+                                              <div class="alert alert-info">No data available</div>
                                             @endif
                                         </tbody>
                                     </table>
