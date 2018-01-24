@@ -100,10 +100,11 @@ class Helper implements HelperContract
            } 
            
            
-           function getDeposits()
+           function getDeposits($email="")
           {
           	$ret = [];
-          	$deposits = Deposits::orderBy('created_at', 'desc')->get();
+              if($email == "") $deposits = Deposits::where('email', $email)->orderBy('created_at', 'desc')->get();
+          	else $deposits = Deposits::orderBy('created_at', 'desc')->get();
           	 if($deposits != null)
               {
               	foreach($deposits as $c){
@@ -123,10 +124,11 @@ class Helper implements HelperContract
           }
           
           
-          function getPayouts()
+          function getPayouts($email = "")
           {
           	$ret = [];
-          	$payouts = Payouts::orderBy('created_at', 'desc')->get();
+              if($email == "") $payouts = Payouts::where('email', $email)->orderBy('created_at', 'desc')->get();
+          	else $payouts = Payouts::orderBy('created_at', 'desc')->get();
           	 if($payouts != null)
               {
               	foreach($payouts as $c){
@@ -187,51 +189,6 @@ class Helper implements HelperContract
               }
               return $ret;
           }
-          
-          
-          function getDeposits($email)
-          {
-          	$ret = [];
-          	$deposits = Deposits::where('email', $email)->orderBy('created_at', 'desc')->get();
-          	 if($deposits != null)
-              {
-              	foreach($deposits as $c){
-              	$temp = [];
-              	$temp['id'] = $c->id;
-                  $temp['deposit_id'] = $c->deposit_id;
-                  $temp['email'] = $c->email;
-                  $temp['wallet'] = $c->wallet;
-                  $temp['amount'] = $c->amount;
-                  $temp['status'] = $c->status;
-                  $temp['status_number'] = $c->status_number;
-                  $temp["date"] = $c->created_at->format("D, jS F Y h:i A");
-                  array_push($ret, $temp);
-                 } 
-              }
-              return $ret;
-          }
-          
-          
-          function getPayouts($email)
-          {
-          	$ret = [];
-          	$payouts = Payouts::where('email', $email)->orderBy('created_at', 'desc')->get();
-          	 if($payouts != null)
-              {
-              	foreach($payouts as $c){
-              	$temp = [];
-              	$temp['id'] = $c->id;
-                  $temp['payout_id'] = $c->payout_id;
-                  $temp['wallet'] = $c->wallet;
-                  $temp['amount'] = $c->amount;
-                  $temp['email'] = $c->email;
-                  $temp['status'] = $c->status;
-                  $temp["date"] = $c->created_at->format("D, jS F Y h:i A");
-                  array_push($ret, $temp);
-                 } 
-              }
-              return $ret;
-          } 
-   
+                                    
 }
 ?>
