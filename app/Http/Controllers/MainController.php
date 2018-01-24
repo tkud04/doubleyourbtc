@@ -95,7 +95,7 @@ class MainController extends Controller {
           $payouts = $this->helpers->getPayouts($id);
        } 
         
-    	return view('transactions', compact(['title','deposits', 'payouts', 'm']));
+    	return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
     }
     
     /**
