@@ -291,7 +291,7 @@ class MainController extends Controller {
                      $deposits =$this->helpers->getDeposits($email);
                      $payouts =$this->helpers->getPayouts($email);
                      $ret = array_merge($deposits, $payouts);
-          dd($ret);
+          #dd($ret);
                                        
                      $status= "view";              
                      return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
