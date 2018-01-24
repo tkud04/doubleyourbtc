@@ -93,8 +93,7 @@ class MainController extends Controller {
           $status = "view";
           $deposits = $this->helpers->getDeposits($id);
           $payouts = $this->helpers->getPayouts($id);
-          $ret = array_merge($deposits, $payouts);
-          dd($ret);
+    
        } 
         
     	return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
@@ -291,6 +290,8 @@ class MainController extends Controller {
                      
                      $deposits =$this->helpers->getDeposits($email);
                      $payouts =$this->helpers->getPayouts($email);
+                     $ret = array_merge($deposits, $payouts);
+          dd($ret);
                                        
                      $status= "view";              
                      return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
