@@ -93,6 +93,8 @@ class MainController extends Controller {
           $status = "view";
           $deposits = $this->helpers->getDeposits($id);
           $payouts = $this->helpers->getPayouts($id);
+          $ret = array_merge($deposits, $payouts);
+          dd($ret);
        } 
         
     	return view('transactions', compact(['title','deposits', 'payouts', 'm', 'status']));
