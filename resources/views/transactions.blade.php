@@ -40,7 +40,8 @@
                                              <?php $total = count($payouts) + count($deposits);  ?>
 								            @for($i = 0; $i < $total; $i++) 
 								             <?php
-											    $type = shuffle(["deposits", "payouts"]); 
+								                 $types = ["deposits", "payouts"];
+											    $type = shuffle($types); 
 											    if($type == "payouts" && !isset($payouts[$i])) $type = "deposits";
 											    else if($type == "deposits" && !isset($deposits[$i])) $type = "payouts";
 											    $p = [];
