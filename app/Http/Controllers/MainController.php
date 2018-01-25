@@ -129,6 +129,7 @@ class MainController extends Controller {
                
                 $validator = Validator::make($req, [
                              'wallet' => 'required',
+                             'amount' => 'required',
                    ]);
          
                  if($validator->fails())
@@ -149,15 +150,23 @@ class MainController extends Controller {
                  
                  else if(strlen($req['wallet']) < 32)
 				 {
-					Session::flash("input-error", "true");
+					Session::flash("input-error", "wallet");
+					return redirect()->back();
+				 }
+				
+				else if(is_amount($req['amount']) && $req['amount'] < 0.05)
+				 {
+					Session::flash("input-error", "amount");
 					return redirect()->back();
 				 }
                 
                  else
                  { 
-                 	$w = $req['wallet'];                     
+                 	$w = $req['wallet'];
+                     $a = $req['amount'];                     
                      
                      $deposit =Deposits::where([ ['wallet',$w], 
+                                                                        ['amount',$a], 
                                                                         ['status', "pending"]
                                                                      ])->first();
                     
