@@ -10,8 +10,9 @@
                      @elseif(Session::has("input-error")) 
                         @if(Session::get("input-error") == "wallet")
                          <div class="alert alert-danger">Please enter a valid wallet address</div><br>
-                        @if(Session::get("input-error") == "amount")
+                        @elseif(Session::get("input-error") == "amount")
                          <div class="alert alert-danger">Please enter a valid amount</div><br>
+                         @endif 
                      @endif     
                                
 								<form method="post" action="{{url('double')}}">
