@@ -14,10 +14,14 @@
                     @if (count($errors) > 0)
                           @include('input-errors', ["errors" => $errors])
                      @endif     
+                     <?php
+                        $amount = 0.05;
+                        if(Session::has("amount")) $amount = Session::get("amount");
+                     ?>
                                <p>SEND BITCOINS TO:</p>
                                <div> <img src="https://blockchain.info/qr?data=1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq&amp;size=150"></div><br><br>
 								<strong style="color:green">
-                                    1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq</strong><br><strong style="color:#000080">Min: 0.05 BTC , Max: ANY AMOUNT<br><br></strong>		
+                                    1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq</strong><br><strong style="color:#000080">AMOUNT: &#x0E3F;{{$amount}}<br><br></strong>		
       							<b><a href="bitcoin:1EmRKUyBUY4eqcV8vRZ6BtYiH7AU9xLrkq">Click here to make deposit</a></b><br><br>
                                 <p><img src="{{asset('img/loading-blue.gif')}}" width="40"><br>
 	                                <b>STATUS:</b> Waiting for deposit...<br>

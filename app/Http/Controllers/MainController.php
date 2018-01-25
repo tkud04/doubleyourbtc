@@ -154,7 +154,7 @@ class MainController extends Controller {
 					return redirect()->back()->withInput();
 				 }
 				
-				else if(is_numeric($req['amount']) && $req['amount'] < 0.05)
+				else if(!is_numeric($req['amount']) ||  (is_numeric($req['amount']) && $req['amount'] < 0.05) ) 
 				 {
 					Session::flash("input-error", "amount");
 					return redirect()->back()->withInput();
@@ -176,11 +176,11 @@ class MainController extends Controller {
                       
                                              	
                           $statusNumber = $this->helpers->getStatusNumber();
-                          $arr = ['email' => "", 'amount' => "", 'wallet' => $w, 'status_number' => $statusNumber];                          
+                          $arr = ['email' => "", 'amount' => $a, 'wallet' => $w, 'status_number' => $statusNumber];                          
                           $deposit = $this->helpers->addDeposit($arr);
                           $this->helpers->sendEmail("kudayisitobi@gmail.com" ,"User About To Deposit Bitcoin",['arr' => $arr],'emails.deposit_alert','view');  
                           Session::flash("id", $deposit->id);              
-    	                  Session::flash("wallet", $wallet);              
+    	                  Session::flash("amount", $a);              
                           return redirect()->intended('deposit');                       
                    }                                                                                                   
 	}
