@@ -151,13 +151,13 @@ class MainController extends Controller {
                  else if(strlen($req['wallet']) < 32)
 				 {
 					Session::flash("input-error", "wallet");
-					return redirect()->back();
+					return redirect()->back()->withInput();
 				 }
 				
 				else if(is_numeric($req['amount']) && $req['amount'] < 0.05)
 				 {
 					Session::flash("input-error", "amount");
-					return redirect()->back();
+					return redirect()->back()->withInput();
 				 }
                 
                  else
