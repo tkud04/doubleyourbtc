@@ -20,7 +20,7 @@
 									{{ csrf_field() }}   
                                     <h4>Enter your bitcoin wallet address:</h4>       
 									<input type="text" name="wallet" placeholder="Enter your bitcoin address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your bitcoin address'" required class="single-input-primary" value="{{old('wallet')}}"><br>
-									<h4>Amount to invest (Minimum: <b>&#x0E3F;0.05</b>):</h4>       
+									<h4>Amount to invest<br>(Minimum: <b>&#x0E3F;0.05</b>):</h4>       
 									<input type="text" name="amount" placeholder="Enter amount" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter amount'" required class="single-input-primary" value="{{old('amount')}}"><br>
 					
 									<button type="submit" class="genric-btn primary radius">Let's double it!</button>

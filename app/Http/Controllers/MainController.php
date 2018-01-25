@@ -154,7 +154,7 @@ class MainController extends Controller {
 					return redirect()->back();
 				 }
 				
-				else if(is_amount($req['amount']) && $req['amount'] < 0.05)
+				else if(is_amount($req['amount']) || $req['amount'] < 0.05)
 				 {
 					Session::flash("input-error", "amount");
 					return redirect()->back();
